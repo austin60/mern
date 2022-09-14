@@ -4,13 +4,18 @@ import { MdDelete } from "react-icons/md";
 
 class ContMan extends Component{
     render(){
+        const {blogs}=this.props;
         return(
-            <div className='container content-managment'>
-                <div>Title 1</div>
-                <div>
-                    <button className='btn btn-success'>Edit <BiEdit/></button>
-                    <button className='btn btn-danger'>Delete <MdDelete /></button>
-                </div>
+            <div>
+                {blogs.map(blog=> <div key={blog._id}className='container content-managment'>
+               
+               <div className='content-title'>{blog.title}</div>
+               <div className='content-btns'>
+                   <button className='btn btn-success'>Edit <BiEdit/></button>
+                   <button className='btn btn-danger'>Delete <MdDelete /></button>
+               </div>
+           </div>)}
+           
             </div>
         )
     }

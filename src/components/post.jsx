@@ -18,7 +18,7 @@ class Post extends Component{
         content:this.state.content,
         author:this.state.author
      }
-     
+
     axios.post('http://localhost:4000/app/post',newBlog)
     .then(res=>console.log(res.data))
 
@@ -31,7 +31,7 @@ class Post extends Component{
     
     }
     render(){
-  
+       
         return(
             <div>
 <form action="" onSubmit={this.createBlog}>

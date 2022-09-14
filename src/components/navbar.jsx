@@ -12,6 +12,7 @@ class Navbar extends Component{
                 <ul>
                     <li ><Link to="/">Blogs</Link></li>
                     <li><Link to="/post">Admin</Link></li>
+                    <li><Link to="/admin-blogs">Manage</Link></li>
                 </ul>
             </nav>
          </div>

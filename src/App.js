@@ -30,8 +30,9 @@ getBlog=()=>{
  <div className="App">
   <Navbar />
   <Routes>
- <Route path='/' element={<Blog  blogs={this.state.blogs}/>} />
-  <Route path='/post' element={ <Post/>} />
+  <Route path='/' element={<Blog  blogs={this.state.blogs}/>} />
+  <Route path='/post' element={ <Post />} />
+  <Route path='/admin-blogs' element={ <ContMan blogs={this.state.blogs}/>} />
   </Routes>
  </div>
  </Router>
