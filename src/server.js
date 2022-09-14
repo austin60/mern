@@ -14,4 +14,5 @@ app.use(cors())
 
 app.use('/app',routesURLs)
 
-app.listen(4000,()=>console.log('serve at port 4000'))
+const port=process.env.PORT||5000;
+app.listen(port,()=>console.log(`serve at port ${port}`))
