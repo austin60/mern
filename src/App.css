@@ -87,3 +87,15 @@ form{
 .blog-list{
   margin-top: 20px;
 }
+.modal-btns{
+  display: flex;
+  justify-content: space-between;
+}
+.modal-cancel{
+  float: right;
+  margin-bottom: 20px;
+}
+.zoom{
+  display: flex;
+  flex-direction: column;
+}
