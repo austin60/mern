@@ -13,9 +13,16 @@ router.post('/post',(req,res)=>{
     .catch(err=>res.json(err))
 })
 
+//fetch all mongodb data
 router.get('/',async(req,res)=>{
     const blogs=await blogModel.find()
     res.json(blogs)
+})
+
+router.put('/admin-blogs/edit/:id',async(req,res)=>{
+    const updatedBlog=await blogModel.findByIdAndUpdate(req.params.id,req.body,{new:true})
+    res.json(updatedBlog)
+
 })
 
 module.exports=router;
