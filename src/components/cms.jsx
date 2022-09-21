@@ -1,4 +1,4 @@
-//import axios from 'axios';
+import axios from 'axios';
 import React, {Component} from 'react';
 import {BiEdit} from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
@@ -10,7 +10,8 @@ class ContMan extends Component{
     state={
         blog:null,
         titleEdit:'',
-        contentEdit:''
+        contentEdit:'',
+        id:''
     }
  openModal=(blog)=>{
     this.setState({blog})
@@ -23,19 +24,19 @@ handleEdits=e=>{
 }
 
 handleState=(blog)=>{
-return  this.setState({titleEdit:blog.title,contentEdit:blog.content});
+return  this.setState({titleEdit:blog.title,contentEdit:blog.content,id:blog._id});
   
 }
 handleSubmit=(e)=>{
     e.preventDefault()
      
-const updatedBlog={
-  titleEdit:this.state.titleEdit,
-  contentEdit:this.state.contentEdit
-}
+const titleEdit=this.state.titleEdit
+const contentEdit=this.state.contentEdit
+const id=this.state.id
 
-    console.log(updatedBlog);
-   // axios.put('http://localhost:4000/app/admin-blogs/edit/:_id',updatedBlog)
+   axios.put(`http://localhost:4000/app/admin-blogs/edit/${id}`,{titleEdit:titleEdit,contentEdit:contentEdit})
+   .then(res=>{console.log(res.data);console.log('formSubmitted');})
+   .catch(err=>console.log(err))
     
 }
 

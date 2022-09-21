@@ -20,9 +20,16 @@ router.get('/',async(req,res)=>{
 })
 
 router.put('/admin-blogs/edit/:id',async(req,res)=>{
-    const updatedBlog=await blogModel.findByIdAndUpdate(req.params.id,req.body,{new:true})
-    res.json(updatedBlog)
-
+  try{
+     await blogModel.findByIdAndUpdate(req.params.id,{
+        title:req.body.titleEdit,
+        content:req.body.contentEdit
+     })
+   }catch (err){
+      console.error(err.message);
+      res.send(400).send('Server Error');
+   }
+ 
 })
 
 module.exports=router;

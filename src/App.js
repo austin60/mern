@@ -19,7 +19,7 @@ componentDidMount=()=>{
 getBlog=()=>{
     axios.get('http://localhost:4000/app')
     .then(res=>this.setState({blogs:res.data}))
-    .catch(err=>console.log(err.json()))
+    .catch(err=>console.log(err))
 }
  render(){ 
   
