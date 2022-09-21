@@ -27,7 +27,6 @@ router.put('/admin-blogs/edit/:id',async(req,res)=>{
      })
    }catch (err){
       console.error(err.message);
-      res.send(400).send('Server Error');
    }
  
 })
@@ -38,7 +37,6 @@ router.delete('/admin-blogs/delete/:id',async(req,res)=>{
     res.send(200).send('Blog Deleted');
    }catch(err){
     console.error(err.message);
-    res.send(400).send('Server Error');
  }
    
   })

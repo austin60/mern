@@ -31,7 +31,7 @@ handleDelete=(blog)=>{
     if(window.confirm(`Action will delete ${blog.title}`)===true){
         const id=blog._id
 
-        axios.delete(`http://localhost:4000/app/delete/${id}`)
+        axios.delete(`http://localhost:4000/app/admin-blogs/delete/${id}`)
     }
     else  alert("Operation was terminated")
 }
@@ -45,7 +45,8 @@ const id=this.state.id
    axios.put(`http://localhost:4000/app/admin-blogs/edit/${id}`,{titleEdit:titleEdit,contentEdit:contentEdit})
    .then(res=>{console.log(res.data);console.log('formSubmitted');})
    .catch(err=>console.log(err))
-    
+
+   this.closeModal()
 }
     render(){
        
