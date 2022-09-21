@@ -32,4 +32,9 @@ router.put('/admin-blogs/edit/:id',async(req,res)=>{
  
 })
 
+router.put('/admin-blogs/delete/:id',async(req,res)=>{
+
+   
+  })
+
 module.exports=router;
