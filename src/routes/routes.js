@@ -32,8 +32,14 @@ router.put('/admin-blogs/edit/:id',async(req,res)=>{
  
 })
 
-router.put('/admin-blogs/delete/:id',async(req,res)=>{
-
+router.delete('/admin-blogs/delete/:id',async(req,res)=>{
+   try{
+    await blogModel.findByIdAndDelete(req.params.id)
+    res.send(200).send('Blog Deleted');
+   }catch(err){
+    console.error(err.message);
+    res.send(400).send('Server Error');
+ }
    
   })
 

@@ -27,6 +27,14 @@ handleState=(blog)=>{
 return  this.setState({titleEdit:blog.title,contentEdit:blog.content,id:blog._id});
   
 }
+handleDelete=(blog)=>{
+    if(window.confirm(`Action will delete ${blog.title}`)===true){
+        const id=blog._id
+
+        axios.delete(`http://localhost:4000/app/delete/${id}`)
+    }
+    else  alert("Operation was terminated")
+}
 handleSubmit=(e)=>{
     e.preventDefault()
      
@@ -39,8 +47,6 @@ const id=this.state.id
    .catch(err=>console.log(err))
     
 }
-
-
     render(){
        
         const {blogs}=this.props;
@@ -56,7 +62,7 @@ const id=this.state.id
                <div className='content-title'>{blog.title}</div>
                <div className='content-btns'>
                    <button className='btn btn-success' onClick={()=>{this.openModal(blog); this.handleState(blog)} }>Edit <BiEdit/></button>
-                   <button className='btn btn-danger'>Delete <MdDelete /></button>
+                   <button className='btn btn-danger' onClick={()=>this.handleDelete(blog)}>Delete <MdDelete /></button>
                </div>
            </div>)}
            </div>
@@ -90,8 +96,8 @@ const id=this.state.id
                 </form>
             </Zoom>
            </Modal>)
-
            }
+  
             </div>
         )
     }
