@@ -2,8 +2,9 @@ import React,{Component} from 'react';
 import './App.css';
 import Post from './components/post';
 import Blog from './components/blog';
-import Navbar from './components/navbar';
+//import Navbar from './components/navbar';
 import ContMan from './components/cms';
+import MyckEditor from './components/editor';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter as Router,   Routes,  Route} from "react-router-dom";
 import axios from 'axios';
@@ -28,11 +29,12 @@ getBlog=()=>{
     
 <Router>
  <div className="App">
-  <Navbar />
+ { /*<Navbar />*/}
   <Routes>
   <Route path='/' element={<Blog  blogs={this.state.blogs}/>} />
   <Route path='/post' element={ <Post />} />
   <Route path='/admin-blogs' element={ <ContMan blogs={this.state.blogs}/>} />
+  <Route path='/editor' element={ <MyckEditor />} />
   </Routes>
  </div>
  </Router>

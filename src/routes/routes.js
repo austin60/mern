@@ -15,7 +15,7 @@ router.post('/post',(req,res)=>{
 
 //fetch all mongodb data
 router.get('/',async(req,res)=>{
-    const blogs=await blogModel.find()
+    const blogs=await blogModel.find().sort({date:-1})
     res.json(blogs)
 })
 

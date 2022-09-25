@@ -4,6 +4,7 @@ import {BiEdit} from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import  Modal  from 'react-modal';
 import Zoom from 'react-reveal/Zoom';
+import AdminNav from './admnnav';
 
 
 class ContMan extends Component{
@@ -54,8 +55,9 @@ const id=this.state.id
         const {blog,titleEdit,contentEdit}=this.state;
         return(
             <div>
+            <AdminNav />
              <nav className="navbar bg-light">
-                  <span className="navbar-brand mb-0">{blogs.length} posts found</span>
+                  {blogs.length<=0?<span>Loading...</span>:<span>{blogs.length} blogs found</span> }
              </nav>
              <div className='blog-list'>
                 {blogs.map(blog=> <div key={blog._id}className='container content-managment'>

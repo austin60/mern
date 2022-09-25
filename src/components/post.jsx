@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import axios from 'axios'
+import AdminNav from './admnnav';
 
 class Post extends Component{
     state={
@@ -28,12 +29,13 @@ class Post extends Component{
       author:""
     })
    
-    
+     alert("Post has been added to blog")
     }
     render(){
        
         return(
             <div>
+<AdminNav />
 <form action="" onSubmit={this.createBlog}>
                 
     <div className="mb-3">

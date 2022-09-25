@@ -1,5 +1,6 @@
 .App {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Lora', serif;
+  
 }
 
 .App-logo {
@@ -118,4 +119,19 @@ form{
   justify-content: space-between;
   padding-left: 4px;
   padding-right: 4px;
+}
+.navbar{
+  margin-bottom: 6px;
+  background: #EBBC9A;
+  opacity: 0.7;
+}
+.navbar-brand{
+ color: white;
+}
+.home-blog{
+  padding-top: 70px;
+}
+.content :hover{
+background:rgb(247, 246, 245);
+
 }
