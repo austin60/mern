@@ -11,7 +11,7 @@ class AdminNav extends Component{
                     <li><Link to="/" style={{ color: 'white' }}>Home</Link></li>
                     <li><Link to="/post" style={{ color: 'white' }}>Write</Link></li>
                     <li><Link to="/admin-blogs" style={{color: 'white' }}>Manage</Link></li>
-                    <li><Link to="/editor" style={{ color: 'white' }}>Editor</Link></li>
+                    
                 </ul>
             </nav>
             </div>
