@@ -5,6 +5,9 @@ import { MdDelete } from "react-icons/md";
 import  Modal  from 'react-modal';
 import Zoom from 'react-reveal/Zoom';
 import AdminNav from './admnnav';
+import Editor from 'ckeditor5-custom-build/build/ckeditor';
+import { CKEditor } from '@ckeditor/ckeditor5-react'
+
 
 
 class ContMan extends Component{
@@ -82,12 +85,21 @@ const id=this.state.id
                     <input type="text" className='form-control' id="up-title"
                      name='titleEdit' value={titleEdit}  onChange={this.handleEdits} />
                 </div>
-                <div className="mb-3">
-                 <label htmlFor="Textarea1" className="form-label">Blog</label>
-                 <textarea className="form-control" id="Textarea1" rows="7" 
-                 name='contentEdit' value={contentEdit} onChange={this.handleEdits}/>
-                </div>
                 
+           <div className="mb-3">
+               <label htmlFor="Textarea1" className="form-label">Blog</label>
+                <CKEditor
+                    editor={Editor}
+                    data={contentEdit}
+                   
+                    onChange={(event, editor) => {
+                        const data = editor.getData();
+                        this.setState({contentEdit:data})
+                    }}
+                   
+                />
+            </div>
+                 
                 <div className='modal-btns'>
                   <div>
                   <button className='btn btn-primary' type='submit'>Confirm</button> 

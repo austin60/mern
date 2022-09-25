@@ -5,7 +5,7 @@ class AdminNav extends Component{
     render(){
         return(
             <div>
-             <nav className='navbar '>
+             <nav className='navbar bg-secondary '>
                 <div className="navbar-brand">Daily-Post</div>
                 <ul>
                     <li><Link to="/" style={{ color: 'white' }}>Home</Link></li>

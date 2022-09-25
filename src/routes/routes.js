@@ -6,7 +6,8 @@ router.post('/post',(req,res)=>{
     const newBlog=new blogModel({
        title:req.body.title,
        content:req.body.content,
-       author:req.body.author 
+       author:req.body.author,
+       category:req.body.category
     })
     newBlog.save()
     .then(data=>res.json(data))

@@ -10,7 +10,7 @@ class Navbar extends Component{
     render(){
         return(
          <div>
-            <nav className='navbar fixed-top'>
+            <nav className='navbar bg-secondary fixed-top'>
                 <div className="navbar-brand" >Daily Post</div>
                 <ul>
                     <li ><Link to="/" style={{ color: 'white'}}>Home</Link></li>
