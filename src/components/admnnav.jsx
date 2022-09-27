@@ -6,9 +6,8 @@ class AdminNav extends Component{
         return(
             <div>
              <nav className='navbar bg-secondary '>
-                <div className="navbar-brand">Daily-Post</div>
+                <div className="navbar-brand"><Link to="/" style={{ color: 'white', textDecoration:'none'}}>Daily Post</Link></div>
                 <ul>
-                    <li><Link to="/" style={{ color: 'white' }}>Home</Link></li>
                     <li><Link to="/post" style={{ color: 'white' }}>Write</Link></li>
                     <li><Link to="/admin-blogs" style={{color: 'white' }}>Manage</Link></li>
                     

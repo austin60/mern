@@ -130,7 +130,89 @@ form{
 .home-blog{
   padding-top: 70px;
 }
-.content :hover{
+.news :hover{
 background:rgb(247, 246, 245);
 
+}
+.highlights{
+  height: 96vh;
+  width: 30vw;
+  background: rgb(243, 241, 241);
+}
+.content{
+  display: flex;
+}
+.news{
+  padding-right: 20px;
+  padding-left: 30px;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+}
+.footer-notes {
+  text-decoration: underline;
+  color:white;
+}
+.socials-form{
+  display: flex;
+  width: 98vw;
+  justify-content:center;
+  height: auto;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+.news-letter{
+  height: 100%;
+  background: white;
+  width: 35vw;
+}
+
+.message{
+  width: 50vw;
+  height: 100%;
+}
+.contact-intro{
+ 
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.contact-page{
+  padding-top: 35px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.cont-heading{
+  margin-bottom: 30px;
+}
+.mayne-footer{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.btn{
+  margin-top: 10px;
+}
+.icon{
+  font-size:1.5em;
+  color:orange;
+}
+.socials ul{
+  display: flex;
+  justify-content: space-around;
+  color: orange;
+  margin-bottom: 0px;
+}
+.pagination{
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+}
+.pag{
+  height: 35px;
+  margin-bottom: 15px;
 }
