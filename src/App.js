@@ -5,6 +5,9 @@ import Blog from './components/blog';
 import ContMan from './components/cms';
 import 'bootstrap/dist/css/bootstrap.css';
 import Contact from './components/contact';
+import Entertainment from './components/entertainment';
+import Sports from './components/sports';
+import Business from './components/business';
 import { BrowserRouter as Router,Routes,  Route} from "react-router-dom";
 import axios from 'axios';
 
@@ -61,9 +64,12 @@ this.getBlog();
   <Route path='/' element={<Blog  blogs={blogs} page={page} /*pageCount={pageCount}*/
       handleNxt={this.handleNxt}  handleBck={this.handleBck}/>} />
 
-  <Route path='/post' element={ <Post />} />
-  <Route path='/admin-blogs' element={ <ContMan blogs={blogs}/>} />
+  <Route path='/post' element={ <Post handlePost={this.getBlog} />} />
+  <Route path='/admin-blogs' element={ <ContMan />} />
   <Route path='/contact' element={ <Contact/>} />
+  <Route path='/entertainment' element={ <Entertainment/>} />
+  <Route path='/sports' element={ <Sports/>} />
+  <Route path='/business' element={ <Business/>} />
   </Routes>
  </div>
  </Router>

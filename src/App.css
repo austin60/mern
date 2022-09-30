@@ -1,5 +1,7 @@
 .App {
-  font-family: 'Lora', serif;
+ /* font-family: 'Lora', serif;*/
+  font-family: 'Roboto', sans-serif;
+
   
 }
 
@@ -193,6 +195,7 @@ background:rgb(247, 246, 245);
   justify-content: space-between;
   padding-right: 20px;
   padding-left: 20px;
+  font-size: 12.5px;
 }
 .btn{
   margin-top: 10px;
@@ -215,4 +218,8 @@ background:rgb(247, 246, 245);
 .pag{
   height: 35px;
   margin-bottom: 15px;
+}
+.footer{
+  font-size: 12px;
+  padding-top: 9px;
 }

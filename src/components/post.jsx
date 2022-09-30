@@ -37,7 +37,7 @@ class Post extends Component{
     })
    
      alert("Post has been added to blog")
-     console.log(newBlog)
+     this.props.handlePost()
     }
     render(){
        
