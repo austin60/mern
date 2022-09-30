@@ -33,6 +33,7 @@ this.setState(state=>{
   return {page:state.page + 1}
 })
 console.log(this.state.page)
+console.log(`http://localhost:4000/app?page=${this.state.page}`)
 this.getBlog();
 }
 
@@ -45,6 +46,8 @@ if(this.state.page <=1){
 this.setState(state=>{
   return {page:state.page - 1}
 })
+console.log(this.state.page)
+console.log(`http://localhost:4000/app?page=${this.state.page}`)
 this.getBlog();
 }
  render(){ 
