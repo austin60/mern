@@ -16,6 +16,8 @@ class Blog extends Component{
                     <p dangerouslySetInnerHTML={{__html:blog.content}}></p>
                     <p className='author'>by: <i>{blog.author}</i></p>
                 </div>  ) }
+
+               { /*pagination implimentation*/}
                 <div className="pagination">
                     <button className='btn btn-secondary pag' id='bck' onClick={handleBck}> back</button>
                     <span>{page}</span>
