@@ -2,53 +2,62 @@ import React,{Component} from 'react';
 import './App.css';
 import Post from './components/post';
 import Blog from './components/blog';
-//import Navbar from './components/navbar';
 import ContMan from './components/cms';
-//import MyckEditor from './components/editor';
 import 'bootstrap/dist/css/bootstrap.css';
 import Contact from './components/contact';
-import { BrowserRouter as Router,   Routes,  Route} from "react-router-dom";
+import { BrowserRouter as Router,Routes,  Route} from "react-router-dom";
 import axios from 'axios';
 
 class App extends Component {
   state={
     blogs:[],
     page:1,
-    pageCount:0
+  //  pageCount:0
 }
 componentDidMount=()=>{
     this.getBlog();
+    this.btnMonitor();
+    
 }
+btnMonitor=()=>{
 
+}
 getBlog=()=>{
-    axios.get('http://localhost:4000/app')
+    const{page}=this.state
+    axios.get(`http://localhost:4000/app?page=${page}`)
     .then(res=>this.setState({blogs:res.data}))
     .catch(err=>console.log(err))
 }
 handleNxt=()=>{
-  if(this.state.page >= 1) {
-      document.getElementById('bck').disabled=false;
-  }
-  this.setState({page:this.state.page+1})
+this.setState(state=>{
+  return {page:state.page + 1}
+})
+console.log(this.state.page)
+this.getBlog();
 }
-handleBck=()=>{
-  if(this.state.page<=2) {
-      document.getElementById('bck').disabled=true;
-  }
 
-  this.setState({page:this.state.page-1})
+handleBck=()=>{
+if(this.state.page <=1){
+  return this.setState(state=>{
+    return {page:state.page = 1}
+  })
+}
+this.setState(state=>{
+  return {page:state.page - 1}
+})
+this.getBlog();
 }
  render(){ 
-  const{blogs,page,pageCount}=this.state
+  const{blogs,page/*pageCount*/}=this.state
    
   return (
    
 <Router>
  <div className="App">
   <Routes>
-  <Route path='/' element={<Blog  blogs={blogs} page={page} pageCount={pageCount}
+  <Route path='/' element={<Blog  blogs={blogs} page={page} /*pageCount={pageCount}*/
       handleNxt={this.handleNxt}  handleBck={this.handleBck}/>} />
-      
+
   <Route path='/post' element={ <Post />} />
   <Route path='/admin-blogs' element={ <ContMan blogs={blogs}/>} />
   <Route path='/contact' element={ <Contact/>} />

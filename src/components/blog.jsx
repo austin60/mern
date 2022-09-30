@@ -15,7 +15,7 @@ class Blog extends Component{
                 {blogs.map(blog=><div className='container ' key={blog._id}>
                     <p dangerouslySetInnerHTML={{__html:blog.content}}></p>
                     <p className='author'>by: <i>{blog.author}</i></p>
-                </div>  )}
+                </div>  ) }
                 <div className="pagination">
                     <button className='btn btn-secondary pag' id='bck' onClick={handleBck}> back</button>
                     <span>{page}</span>

@@ -2,6 +2,7 @@ const express=require('express');
 const router=express.Router()
 const blogModel=require('../model/blogModel')
 
+
 router.post('/post',(req,res)=>{
     const newBlog=new blogModel({
        title:req.body.title,
@@ -16,7 +17,10 @@ router.post('/post',(req,res)=>{
 
 //fetch all mongodb data
 router.get('/',async(req,res)=>{
-    const blogs=await blogModel.find().sort({date:-1})
+   const page=req.query.page||0;
+   const ITEMS_PER_PAGE=3;
+
+    const blogs=await blogModel.find().sort({date:-1}).skip((page-1 )* ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
     res.json(blogs)
 })
 
