@@ -9,28 +9,25 @@ import Entertainment from './components/entertainment';
 import Sports from './components/sports';
 import Business from './components/business';
 import { BrowserRouter as Router,Routes,  Route} from "react-router-dom";
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { fetchBlogs } from './redux/actions';
+
+
 
 class App extends Component {
   state={
-    blogs:[],
     page:1,
   //  pageCount:0
 }
 componentDidMount=()=>{
-    this.getBlog();
+    this.props.fetchBlogs();
     this.btnMonitor();
     
 }
 btnMonitor=()=>{
+ console.log(`blog prp:${this.props.blogs}`)
+}
 
-}
-getBlog=()=>{
-    const{page}=this.state
-    axios.get(`http://localhost:4000/app?page=${page}`)
-    .then(res=>this.setState({blogs:res.data}))
-    .catch(err=>console.log(err))
-}
 handleNxt=()=>{
 this.setState(state=>{
   return {page:state.page + 1}
@@ -50,17 +47,20 @@ this.setState(state=>{
   return {page:state.page - 1}
 })
 console.log(this.state.page)
-console.log(`http://localhost:4000/app?page=${this.state.page}`)
+console.log("http://localhost:4000/app?page="+ this.state.page)
 this.getBlog();
 }
  render(){ 
-  const{blogs,page/*pageCount*/}=this.state
+  const{page/*pageCount*/}=this.state
+  const{blogs}=this.props
    
   return (
    
 <Router>
  <div className="App">
+ {!blogs ? <div>Loading ...</div>:<div>
   <Routes>
+   
   <Route path='/' element={<Blog  blogs={blogs} page={page} /*pageCount={pageCount}*/
       handleNxt={this.handleNxt}  handleBck={this.handleBck}/>} />
 
@@ -71,9 +71,10 @@ this.getBlog();
   <Route path='/sports' element={ <Sports/>} />
   <Route path='/business' element={ <Business/>} />
   </Routes>
+  </div> }
  </div>
  </Router>
   );}
 }
 
-export default App;
+export default connect((state)=>({blogs:state.blogs.items}),{fetchBlogs}) (App);

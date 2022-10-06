@@ -5,31 +5,38 @@ import Footer from './footer';
 class Blog extends Component{
  
  render(){
-      const {blogs, handleNxt,handleBck,page,pageCount}=this.props;
+      const {blogs, handleNxt,handleBck,page}=this.props;
         return(
+           
             <div className='home-blog'>
-                <Navbar />
-
-                <div className='content'>
-                <div className="news">
-                {blogs.map(blog=><div className='container ' key={blog._id}>
-                    <p dangerouslySetInnerHTML={{__html:blog.content}}></p>
-                    <p className='author'>by: <i>{blog.author}</i></p>
-                </div>  ) }
-
-               { /*pagination implimentation*/}
-                <div className="pagination">
-                    <button className='btn btn-secondary pag' id='bck' onClick={handleBck}> back</button>
-                    <span>{page}</span>
-                    <button className='btn btn-secondary pag' id='nxt' onClick={handleNxt}>next</button>
-                   </div>
-                </div>
-                <div className="highlights">
-
-                </div>
-                </div>
+                {
                   
-                <Footer />
+                !blogs ? <div>Loading...</div>: <div>
+                <Navbar />
+               
+               <div className='content'>
+               <div className="news">
+                {console.log(blogs)}
+               {this.props.blogs.map(blog=><div className='container ' key={blog._id}>
+                   <p dangerouslySetInnerHTML={{__html:blog.content}}></p>
+                   <p className='author'>by: <i>{blog.author}</i></p>
+               </div>  ) }
+
+              { /*pagination implimentation*/}
+               <div className="pagination">
+                   <button className='btn btn-secondary pag' id='bck' onClick={handleBck}> back</button>
+                   <span>{page}</span>
+                   <button className='btn btn-secondary pag' id='nxt' onClick={handleNxt}>next</button>
+                  </div>
+               </div>
+               <div className="highlights">
+
+               </div>
+               </div>
+                 
+               <Footer />
+                </div> }
+              
                </div>
         )
     }

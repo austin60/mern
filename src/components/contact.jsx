@@ -16,7 +16,7 @@ class Contact extends Component{
                             <p>Subcribe to get daily news letters and keep informed</p>
                             <div>
                             <label htmlFor="lettersub">E-mail</label>
-                            <input type="text" className='form-control' id='lettersub'/>
+                            <input type="text" className='form-control'required id='lettersub'/>
                             </div>
                             <div>
                                 <button className='btn btn-secondary'>Subscribe</button>
@@ -27,20 +27,20 @@ class Contact extends Component{
                         <form className="form"action="">
                         <h4>Write to us</h4>
                             <div>
-                            <label htmlFor="sender-name">Name</label>
-                            <input type="text" name="" className='form-control' id='sender-name'/>
+                            <label htmlFor="sender-name">Name*</label>
+                            <input type="text" name="" className='form-control' required id='sender-name'/>
                             </div>
                             <div>
-                            <label htmlFor="sender-email">E-mail</label>
-                            <input type="text" name="" className='form-control' id='sender-email'/>
+                            <label htmlFor="sender-email">E-mail*</label>
+                            <input type="text" name="" className='form-control' required id='sender-email'/>
                             </div>
                             <div>
                             <label htmlFor="sender-phone">Phone</label>
                             <input type="text" name="" className='form-control' id='sender-phone'/>
                             </div>
                             <div>
-                            <label htmlFor="sender-msg">Message</label>
-                            <textarea name="" className='form-control' id="sender-msg" cols="40" rows="4"></textarea>
+                            <label htmlFor="sender-msg">Message*</label>
+                            <textarea name="" className='form-control' id="sender-msg" cols="40" required rows="4"></textarea>
                             </div>
                             <div>
                             <button className='btn btn-primary' type='submit'> Send</button>

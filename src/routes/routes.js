@@ -15,14 +15,14 @@ router.post('/post',(req,res)=>{
     .catch(err=>res.json(err))
 })
 
-//fetch all mongodb data
+//fetch all mongodb data  --use filter for categories
 router.get('/',async(req,res)=>{
-   const page=req.query.page||0;
-   const ITEMS_PER_PAGE=3;
+  // const page=req.query.page||0;
+  // const ITEMS_PER_PAGE=3;
  //  const totalDocs=await blogModel.countDocuments({});
  //  const totalPages=Math.ceil(totalDocs/ITEMS_PER_PAGE)
 
-    const blogs=await blogModel.find({$or:[{category:"Politics"},{category:"Developing"}]}).sort({date:-1}).skip((page-1 )* ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)
+    const blogs=await blogModel.find({/*$or:[{category:"Politics"},{category:"Developing"}]*/}).sort({date:-1})/*.skip((page-1 )* ITEMS_PER_PAGE).limit(ITEMS_PER_PAGE)*/
     res.json(blogs /* totalPages*/)
 })
 
