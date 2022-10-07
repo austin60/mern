@@ -26,29 +26,8 @@ router.get('/',async(req,res)=>{
     res.json(blogs /* totalPages*/)
 })
 
-router.get('/sports',async(req,res)=>{
-   const sports= await blogModel.find({category:"Sports"}).sort({date:-1})
-   res.json(sports)
-})
-//route to entertainment
-router.get('/entertainment',async(req,res)=>{
-   const entertainment= await blogModel.find({category:"Entertainment"}).sort({date:-1})
-   res.json(entertainment)
-})
 
-//route to business section
-router.get('/business',async(req,res)=>{
-   const business= await blogModel.find({category:"Business"}).sort({date:-1})
-   res.json(business)
-})
-
-//route for every blog created
-router.get('/admin-blogs',async(req,res)=>{
-   const blogs= await blogModel.find({}).sort({date:-1})
-   res.json(blogs)
-})
-
-//route for individual blog
+//route for editing individual blog
 router.put('/admin-blogs/edit/:id',async(req,res)=>{
   try{
      await blogModel.findByIdAndUpdate(req.params.id,{
@@ -64,7 +43,7 @@ router.put('/admin-blogs/edit/:id',async(req,res)=>{
 router.delete('/admin-blogs/delete/:id',async(req,res)=>{
    try{
     await blogModel.findByIdAndDelete(req.params.id)
-    res.send(200).send('Blog Deleted');
+    res.sendStatus(200).send('Blog Deleted');
    }catch(err){
     console.error(err.message);
  }

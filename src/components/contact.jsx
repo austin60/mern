@@ -50,7 +50,7 @@ class Contact extends Component{
                    </div>
                 </div>
                 <div className="main-footer">
-                  <MainFooter/>
+                  <MainFooter />
                 </div>
             </div>
         )

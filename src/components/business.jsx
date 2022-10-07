@@ -1,29 +1,19 @@
 import React,{Component} from 'react';
 import Navbar from './navbar';
 import Footer from './footer';
-import axios from 'axios';
+//import axios from 'axios';
 
 class Business extends Component{
-    state={
-        business:[]
-    }
-    componentDidMount=()=>{
-        this.getBusiness();
-      }
-    getBusiness=()=>{
-        axios.get("http://localhost:4000/app/business")
-        .then(res=>this.setState({business:res.data}))
-        .catch(err=>console.log(err))
-    }
+
  render(){
-      const {business}=this.state;
+      const {blogs}=this.props;
         return(
             <div className='home-blog'>
                 <Navbar />
 
                 <div className='content'>
                 <div className="news">
-                {business.map(bs=><div className='container ' key={bs._id}>
+                {blogs.filter(blog=>blog.category==="Business").map(bs=><div className='container ' key={bs._id}>
                     <p dangerouslySetInnerHTML={{__html:bs.content}}></p>
                     <p className='author'>by: <i>{bs.author}</i></p>
                 </div>  ) }

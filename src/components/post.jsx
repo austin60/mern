@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import axios from 'axios'
 import AdminNav from './admnnav';
 import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import { CKEditor } from '@ckeditor/ckeditor5-react'
@@ -25,9 +24,7 @@ class Post extends Component{
         category:this.state.category
         
      }
-
-   axios.post('http://localhost:4000/app/post',newBlog)
-    .then(res=>console.log(res.data))
+this.props.createNewBlog (newBlog)
 
     this.setState({
       title:"",
@@ -36,8 +33,8 @@ class Post extends Component{
       category:""
     })
    
-     alert("Post has been added to blog")
-     this.props.handlePost()
+    alert("Post has been added to blog")
+      this.props.fetchBlogs()
     }
     render(){
        

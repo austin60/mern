@@ -16,8 +16,8 @@ class Blog extends Component{
                
                <div className='content'>
                <div className="news">
-                {console.log(blogs)}
-               {this.props.blogs.map(blog=><div className='container ' key={blog._id}>
+            
+               {this.props.blogs.filter(blog=>blog.category==="Politics" ||blog.category==="Developing").map(blog=><div className='container ' key={blog._id}>
                    <p dangerouslySetInnerHTML={{__html:blog.content}}></p>
                    <p className='author'>by: <i>{blog.author}</i></p>
                </div>  ) }

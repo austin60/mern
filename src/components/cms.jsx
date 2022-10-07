@@ -16,12 +16,7 @@ class ContMan extends Component{
         titleEdit:'',
         contentEdit:'',
         id:'',
-        blogs:[]
     }
-componentDidMount=()=>{
-    this.getAllBlogs();
-}
-
  openModal=(blog)=>{
     this.setState({blog})
  }
@@ -58,14 +53,9 @@ const id=this.state.id
    this.closeModal();
    this.getAllBlogs();
 }
-getAllBlogs=()=>{
-    axios.get("http://localhost:4000/app/admin-blogs")
-    .then(res=>this.setState({blogs:res.data}))
-    .catch(err=>console.log(err))
-}
     render(){
        
-        const {blogs}=this.state;
+        const {blogs}=this.props;
         const {blog,titleEdit,contentEdit}=this.state;
         return(
             <div>

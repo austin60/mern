@@ -1,30 +1,17 @@
 import React,{Component} from 'react';
 import Navbar from './navbar';
 import Footer from './footer';
-import axios from 'axios';
 
 class Entertainment extends Component{
-    state={
-        entertainment:[]
-    }
-    componentDidMount=()=>{
-      this.getEntertainment();
-    }
- 
-    getEntertainment=()=>{
-        axios.get("http://localhost:4000/app/entertainment")
-        .then(res=>this.setState({entertainment:res.data}))
-        .catch(err=>console.log(err))
-    }
  render(){
-      const {entertainment}=this.state;
+      const {blogs}=this.props;
         return(
             <div className='home-blog'>
                 <Navbar />
 
                 <div className='content'>
                 <div className="news">
-                {entertainment.map(entertain=><div className='container ' key={entertain._id}>
+                {blogs.filter(blog=>blog.category==="Entertainment").map(entertain=><div className='container ' key={entertain._id}>
                     <p dangerouslySetInnerHTML={{__html:entertain.content}}></p>
                     <p className='author'>by: <i>{entertain.author}</i></p>
                 </div>  ) }
