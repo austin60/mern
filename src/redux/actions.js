@@ -3,7 +3,7 @@ import { FETCH_BLOGS,DELETE_BLOG ,UPDATE_BLOG, CREATE_BLOG } from "./types";
 
 
 
-//read
+//read--
 export const fetchBlogs = () => {
     return (dispatch) => {
         return axios.get("http://localhost:4000/app")
@@ -21,7 +21,7 @@ export const fetchBlogs = () => {
             });
     };
 };
-//create
+//create--
 export const createNewBlog  = newBlog => async dispatch => {
     const resp = await axios.post('http://localhost:4000/app/post',newBlog);
     dispatch({
@@ -32,7 +32,6 @@ export const createNewBlog  = newBlog => async dispatch => {
 
 
 //update
-
 export const updateBlog = (titleEdit,contentEdit,id) => async dispatch => {
     const resp = await axios.put(`http://localhost:4000/app/admin-blogs/edit/${id}`,{titleEdit:titleEdit,contentEdit:contentEdit});
     dispatch({

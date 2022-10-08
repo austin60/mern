@@ -35,7 +35,9 @@ handleDelete=(blog)=>{
     if(window.confirm(`Action will delete ${blog.title}`)===true){
         const id=blog._id
 
-        axios.delete(`http://localhost:4000/app/admin-blogs/delete/${id}`)
+        /*axios.delete(`http://localhost:4000/app/admin-blogs/delete/${id}`)*/
+        this.props.deleteBlog (id);
+        this.props.fetchBlogs();
     }
     else  alert("Operation was terminated")
 }
@@ -50,8 +52,9 @@ const id=this.state.id
    .then(res=>{console.log(res.data);console.log('formSubmitted');})
    .catch(err=>console.log(err))
 
+
    this.closeModal();
-   this.getAllBlogs();
+   this.props.fetchBlogs();
 }
     render(){
        

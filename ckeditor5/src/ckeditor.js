@@ -26,6 +26,7 @@ import PictureEditing from '@ckeditor/ckeditor5-image/src/pictureediting.js';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
+import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 
 class Editor extends ClassicEditor {}
 
@@ -53,7 +54,8 @@ Editor.builtinPlugins = [
 	PictureEditing,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Base64UploadAdapter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              r
 ];
 
 // Editor configuration.

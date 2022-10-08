@@ -1,8 +1,24 @@
 import React, {Component} from 'react';
 import Navbar from './navbar';
 import MainFooter from './mainfooter';
+//import emailjs from '@emailjs/browser';
+import { ContactUs } from './message';
+
+
 
 class Contact extends Component{
+ /*   sendEmail = (e) => {
+        e.preventDefault();
+        const form =React.createRef();
+      
+    
+        emailjs.sendForm('service_fd5of48', 'template_8gpsrcg', form.current, 'PgEmoPELDtiSAFBWh')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      }*/
     render(){
         return(
             <div>
@@ -24,28 +40,29 @@ class Contact extends Component{
                         </form>
                       </div>
                       <div className="message">
-                        <form className="form"action="">
+                       {/*  <form className="form" onSubmit={this.sendEmail()}>
                         <h4>Write to us</h4>
                             <div>
                             <label htmlFor="sender-name">Name*</label>
-                            <input type="text" name="" className='form-control' required id='sender-name'/>
+                            <input type="text" name="user_name" className='form-control' required id='sender-name'/>
                             </div>
                             <div>
                             <label htmlFor="sender-email">E-mail*</label>
-                            <input type="text" name="" className='form-control' required id='sender-email'/>
+                            <input type="text" name="user_email" className='form-control' required id='sender-email'/>
                             </div>
                             <div>
                             <label htmlFor="sender-phone">Phone</label>
-                            <input type="text" name="" className='form-control' id='sender-phone'/>
+                            <input type="text" name="user_phone" className='form-control' id='sender-phone'/>
                             </div>
                             <div>
                             <label htmlFor="sender-msg">Message*</label>
-                            <textarea name="" className='form-control' id="sender-msg" cols="40" required rows="4"></textarea>
+                            <textarea name="message" className='form-control' id="sender-msg" cols="40" required rows="4"></textarea>
                             </div>
                             <div>
-                            <button className='btn btn-primary' type='submit'> Send</button>
+                            <button className='btn btn-primary' type='submit' value="Send"> Send</button>
                             </div>
-                        </form>
+        </form>*/}
+        <ContactUs/>
                       </div>
                    </div>
                 </div>
