@@ -7,10 +7,10 @@ import { AiFillFacebook,AiFillYoutube} from "react-icons/ai";
 class MainFooter extends Component{
     render(){
         return(
-            <div>
+            <div className='m-foot'>
             <div className='mayne-footer bg-secondary'>
                 <div className="logo">
-                <div className="navbar-brand" ><Link to="/" style={{ color: 'white', textDecoration:'none'}}>Daily Post</Link></div>
+                <div className="navbar-brand" ><Link to="/" style={{ color: 'white', textDecoration:'none'}} id='footer-log'>Daily Post</Link></div>
                 </div>
                 <div className="company"> 
                     <ul>
@@ -33,7 +33,7 @@ class MainFooter extends Component{
                 <div className="contacts-info">                  
                     <ul>
                     <h5>Contacts</h5>
-                        <li>dailyblognews@gmail.com</li>
+                        <li>dailyblog@gmail.com</li>
                         <li> P.O Box 13124</li>
                         <li>+245709674679</li>
                         <li>+245709674678</li>

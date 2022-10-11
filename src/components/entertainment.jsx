@@ -10,9 +10,10 @@ class Entertainment extends Component{
                 <Navbar />
 
                 <div className='content'>
+                <div className="highlights"></div>
                 <div className="news">
                 {blogs.filter(blog=>blog.category==="Entertainment").map(entertain=><div className='container ' key={entertain._id}>
-                    <p dangerouslySetInnerHTML={{__html:entertain.content}}></p>
+                    <p className='blog-txt' dangerouslySetInnerHTML={{__html:entertain.content}}></p>
                     <p className='author'>by: <i>{entertain.author}</i></p>
                 </div>  ) }
 
@@ -23,9 +24,7 @@ class Entertainment extends Component{
                     <button className='btn btn-secondary pag' id='nxt' onClick={handleNxt}>next</button>
                    </div>*/}
                 </div>
-                <div className="highlights">
-
-                </div>
+                
                 </div>
                   
                 <Footer />

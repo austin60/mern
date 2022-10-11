@@ -1,7 +1,10 @@
 import React,{Component} from 'react';
 import AdminNav from './admnnav';
 import Editor from 'ckeditor5-custom-build/build/ckeditor';
-import { CKEditor } from '@ckeditor/ckeditor5-react'
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+  
 
 
 class Post extends Component{
@@ -11,6 +14,7 @@ class Post extends Component{
         author:"",
         category:""
       }
+     notify = () => toast("Post added"); 
     handleChange=e=>{
         this.setState({[e.target.name]:e.target.value})
     }
@@ -33,11 +37,12 @@ this.props.createNewBlog (newBlog)
       category:""
     })
    
-    alert("Post has been added to blog")
+   
+    this.notify();
       this.props.fetchBlogs()
     }
     render(){
-       
+     
         return(
             <div>
 <AdminNav />
@@ -81,8 +86,19 @@ this.props.createNewBlog (newBlog)
                        </select>
                     </div>
      
-                    <button className='btn btn-primary' type='submit'>Post</button>
+                    <button className='btn btn-primary' type='submit' >Post</button>
                 </form>
+                <ToastContainer 
+position="top-center"
+theme="dark"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover/>
             </div>
         )
     }
