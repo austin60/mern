@@ -8,6 +8,7 @@ import Contact from './components/contact';
 import Entertainment from './components/entertainment';
 import Sports from './components/sports';
 import Business from './components/business';
+import Navigation from './components/navigation';
 import { BrowserRouter as Router,Routes,  Route} from "react-router-dom";
 import { connect } from 'react-redux';
 import { fetchBlogs,createNewBlog,deleteBlog  } from './redux/actions';
@@ -64,6 +65,7 @@ this.getBlog();
   <Route path='/entertainment' element={ <Entertainment  blogs={blogs}/>} />
   <Route path='/sports' element={ <Sports  blogs={blogs}/>} />
   <Route path='/business' element={ <Business  blogs={blogs}/>} />
+  <Route path='/navigation' element={ <Navigation  blogs={blogs}/>} />
   </Routes>
   </div> }
  </div>

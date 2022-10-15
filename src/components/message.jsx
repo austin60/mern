@@ -26,7 +26,7 @@ export const ContactUs = () => {
       <input type="email" name="user_email" className='form-control'/>
       <label>Message</label>
       <textarea name="message" className='form-control' />
-      <input type="submit" value="Send"  className='btn btn-primary '/>
+      <input type="submit" value="Send"  className='btn'/>
     </form>
     </div>
   );

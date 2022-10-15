@@ -8,7 +8,7 @@ class MainFooter extends Component{
     render(){
         return(
             <div className='m-foot'>
-            <div className='mayne-footer bg-secondary'>
+            <div className='mayne-footer'>
                 <div className="logo">
                 <div className="navbar-brand" ><Link to="/" style={{ color: 'white', textDecoration:'none'}} id='footer-log'>Daily Post</Link></div>
                 </div>
@@ -41,7 +41,7 @@ class MainFooter extends Component{
                 </div>
 
             </div>
-            <div className='socials bg-secondary'>
+            <div className='socials'>
                 
                 <ul>
                     <li><TiSocialInstagram className='icon'/> instagram</li>

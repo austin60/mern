@@ -34,8 +34,6 @@ return  this.setState({titleEdit:blog.title,contentEdit:blog.content,id:blog._id
 handleDelete=(blog)=>{
     if(window.confirm(`Action will delete ${blog.title}`)===true){
         const id=blog._id
-
-        /*axios.delete(`http://localhost:4000/app/admin-blogs/delete/${id}`)*/
         this.props.deleteBlog (id);
         this.props.fetchBlogs();
     }
@@ -63,8 +61,8 @@ const id=this.state.id
         return(
             <div>
             <AdminNav />
-             <nav className="navbar bg-light">
-                  {blogs.length<=0?<span>Loading...</span>:<span>{blogs.length} blogs found</span> }
+             <nav className="navbar blog-count">
+                  {blogs.length<=0?<span>No blogs found yet</span>:<span>{blogs.length} blogs found</span> }
              </nav>
              <div className='blog-list'>
                 {blogs.map(blog=> <div key={blog._id}className='container content-managment'>

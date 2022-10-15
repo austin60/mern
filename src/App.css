@@ -1,6 +1,6 @@
 .App {
- /* font-family: 'Lora', serif;*/
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lora', serif;
+/*  font-family: 'Roboto', sans-serif;*/
 
   
 }
@@ -19,9 +19,9 @@ ul li{
   color: white;
 }
  .active{
-  color:white;
-  text-decoration: underline;
-  font-weight: 700;
+  color:#2D4356;
+  font-weight: 600;
+  text-decoration: none;
 }
 .App-header {
   background-color: #282c34;
@@ -46,6 +46,7 @@ ul li{
     transform: rotate(360deg);
   }
 }
+/*nav bar*/
 .navbar ul{
   display: flex;
 
@@ -54,9 +55,102 @@ ul li{
 text-decoration: none;
 list-style: none;
 margin-left: 15px;
+ }
 
-  
+.navlogo{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0  10px 20px;
+  color: white;
 }
+.main-navbar{
+  background: #2D4356;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+a{
+text-decoration: none;
+color: white;
+padding: 4px;
+}
+.active {
+  
+background: white;
+border-radius: 4px;
+}
+.active a{
+  color:rgb(119, 119, 148);
+}
+.main-navbar ul{
+  float: right;
+  margin-right: 40px;
+  padding: 0px;
+}
+#burger-icon{
+  color:white; 
+  display:none;
+  cursor: pointer;
+}
+.main-navbar li{
+  display: inline-block;
+  margin: 0 8px;
+  list-style: none;
+  padding: 4px;
+}
+.main-navbar li:hover{
+background: white;
+border-radius: 4px;
+
+}
+a:hover{
+  color:rgb(119, 119, 148);
+}
+@media(max-width:660px){
+  #burger-icon{
+    display: block;
+    margin:7px 16px;
+  }
+  .main-navbar{
+    flex-direction: column;
+   
+  }
+  .main-navbar li{
+    display: block;
+    margin-top: 10px;
+
+  }
+  .main-navbar ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+    
+  }
+  .nav-ul{
+    width: 100vw;
+    font-size: 17px;
+    display: none;
+    margin-top: 10px;
+  }
+  .nav-ul li{
+    margin: 10px;
+  }
+ .navli{
+  text-decoration: none;
+ }
+  .mainnav-logo{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    height:auto;
+  }
+}
+/* */
+
+
 form{
   margin-left: 30px;
   margin-right:30px;
@@ -64,7 +158,10 @@ form{
   padding: 6px;
   justify-content: center;
   flex-direction: column;
-  background:rgb(237, 247, 250)
+  background:#FBF7F5;
+}
+form:hover{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
 .author{
   font-size: 13px;
@@ -112,6 +209,9 @@ form{
 .text-muted{
   font-size: 1rem;
 }
+.maptitle{
+  color: #0A1334;
+}
 .deletion{
   background:rgb(237, 247, 250);
   margin:auto;
@@ -135,19 +235,13 @@ nav{
 nav ul{
   display: flex;
 }
-.navbar{
-  margin-bottom: 6px;
-  opacity: 0.7;
-}
-.navbar-brand{
- color: white;
-}
+
 .home-blog{
   padding-top: 70px;
   min-height: 100vh;
 }
 .news :hover{
-background:rgb(247, 246, 245);
+  background:#FBF7F5;
 
 }
 .highlights{
@@ -165,6 +259,7 @@ background:rgb(247, 246, 245);
   width: 70vw;
 }
 .footer{
+  background: #2D4356;
   display: flex;
   justify-content: space-between;
   height: 30px;
@@ -222,11 +317,20 @@ background:rgb(247, 246, 245);
   padding: 0px;
 }
 .mayne-footer{
+  background: #2D4356;
   display: flex;
   justify-content: space-between;
   padding-right: 20px;
   padding-left: 20px;
   font-size: 12.5px;
+  color:#FBF7F5;
+}
+.mayne-footer h5{
+color:#FBF7F5;
+}
+.btn{
+  background: #89AAc3;
+  color:white ;
 }
 .foot-cont{
   margin: 0px;
@@ -234,6 +338,9 @@ background:rgb(247, 246, 245);
 }
 .btn{
   margin-top: 10px;
+}
+.blog-count{
+  background: #89AAc3;
 }
 .icon{
   font-size:1.5em;
@@ -244,6 +351,7 @@ background:rgb(247, 246, 245);
   margin: 0px;
   display: flex;
   justify-content: center;
+  background: #2D4356;
 }
 .socials ul{
   display: flex;
@@ -278,8 +386,11 @@ background:rgb(247, 246, 245);
 }
 li a {
   color: white;
+  text-decoration: none;
 }
-
+.admn-nav {
+  background: #2D4356;
+}
 
 @media(max-width:840px){
   .subscription-form label {
@@ -292,6 +403,9 @@ li a {
   }
   .subscription-form p{
     font-size: 14px;
+  }
+  .maptitle{
+    font-size: 21px;
   }
   #mess label {
     font-size:14px;
@@ -319,8 +433,10 @@ li a {
   }
 
  
-  .navbar li{
-    font-size: 14px;
+  .main-navbar li{
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   .navbar-brand Link{
     font-size: 13px
@@ -377,7 +493,7 @@ li a {
 }
 @media(max-width: 320px){
 .blog-txt{
-  font-size: 11px;
+  font-size: 13px;
 }
 .highlights{
   display:none;
@@ -390,6 +506,9 @@ li a {
 }
 #footer-cont{
   font-size: 9px;
+}
+.maptitle{
+  font-size: 19px;
 }
 #mess{
   margin-top: 20px;
@@ -428,4 +547,13 @@ form input{
  .socials  ul li{
   font-size: 10px;
  }
+ .main-navbar li{
+  font-size: 12px;
+  margin:2px;
+ }
+ .navlogo{
+  margin-right: 0px;
+  font-size: 15px;
+ }
+ 
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Navbar from './navbar';
+import Navigator from './navigation';
 import MainFooter from './mainfooter';
 import { ContactUs } from './message';
 import Sub from './sub';
@@ -9,7 +9,7 @@ import Sub from './sub';
 class Contact extends Component{
     render(){
         return(  <div className='contact-page'>
-          <Navbar/>
+          <Navigator/>
                    <div className='contact-forms'>
                      <div className='sub-form'>
                       <Sub/>

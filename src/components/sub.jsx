@@ -9,7 +9,7 @@ class Sub extends Component{
         <p>Subscribe to our news letters and stay informed</p>
          <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
-         <button className='btn btn-primary'>Subscribe</button>
+         <button className='btn'>Subscribe</button>
         </form>
             </div>
         )

@@ -4,7 +4,6 @@ import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-  
 
 
 class Post extends Component{
@@ -38,7 +37,7 @@ this.props.createNewBlog (newBlog)
     })
    
    
-    this.notify();
+      this.notify();
       this.props.fetchBlogs()
     }
     render(){
@@ -65,6 +64,8 @@ this.props.createNewBlog (newBlog)
                    
                 />
             </div>
+            <div>
+            </div>
             <div className="input-group mb-3">
                      <label className="input-group-text" htmlFor="inputGroupSelect01">Category</label>
                         <select className="form-select form-control" id="inputGroupSelect01" name="category" onChange={this.handleChange}>
@@ -86,7 +87,7 @@ this.props.createNewBlog (newBlog)
                        </select>
                     </div>
      
-                    <button className='btn btn-primary' type='submit' >Post</button>
+                    <button className='btn' type='submit' >Post</button>
                 </form>
                 <ToastContainer 
 position="top-center"
